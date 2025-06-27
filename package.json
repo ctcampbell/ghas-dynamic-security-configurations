@@ -1,7 +1,7 @@
 {
-  "name": "azure-probot-template",
+  "name": "ghas-dynamic-security-configurations",
   "version": "1.0.0",
-  "description": "",
+  "description": "Azure Functions-based Probot app that automatically updates GitHub Advanced Security configurations based on repository custom properties",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
@@ -12,11 +12,11 @@
   },
   "dependencies": {
     "@azure/functions": "^4.0.0",
-    "@probot/adapter-azure-functions": "github:ctcampbell/adapter-azure-functions#main"
+    "@probot/adapter-azure-functions": "github:probot/adapter-azure-functions"
   },
   "devDependencies": {
     "@types/node": "^18.x",
-    "probot": "^12.3.1",
+    "probot": "^13.0.2",
     "rimraf": "^5.0.0",
     "typescript": "^4.0.0"
   },

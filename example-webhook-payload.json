@@ -1,0 +1,22 @@
+{
+  "action": "created",
+  "repository": {
+    "id": 123456789,
+    "full_name": "example-org/example-repo",
+    "owner": {
+      "login": "example-org"
+    },
+    "name": "example-repo"
+  },
+  "old_custom_property_values": [],
+  "new_custom_property_values": [
+    {
+      "property_name": "business_criticality",
+      "value": "high"
+    },
+    {
+      "property_name": "team",
+      "value": "backend"
+    }
+  ]
+}
