@@ -4,7 +4,7 @@ import { createProbot, createAzureFunctionV4 } from "@probot/adapter-azure-funct
 import probotapp from "./app";
 
 app.http('azureprobot', {
-  methods: ['POST'],
+  methods: ['POST', 'GET'],
   authLevel: 'anonymous',
   handler: createAzureFunctionV4(probotapp, {
     probot: createProbot(),
