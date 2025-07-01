@@ -34,7 +34,6 @@ const transport = pino.transport({
 
 const probotApp = createProbot();
 probotApp.log = pino({ level: 'info' }, transport);
-probotApp.log.info("Probot app initialized with Azure Functions adapter");
 
 app.http('azureprobot', {
   methods: ['POST'],
@@ -43,3 +42,5 @@ app.http('azureprobot', {
     probot: probotApp,
   })
 });
+
+probotApp.log.info("Probot app initialized with Azure Functions adapter");
