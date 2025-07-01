@@ -13,10 +13,12 @@ This Azure Functions-based Probot application automatically updates repository s
 ### 1. Create a GitHub App
 
 Create a GitHub App with the following permissions:
+
 - **Repository permissions:**
-  - Administration: Read & write (to update security configurations)
-  - Metadata: Read
-  - Custom properties: Read
+  - Metadata: Read-only
+- **Organization permissions:**
+  - Administration: Read and write (to update security configurations)
+  - Custom properties: Read-only
 
 - **Subscribe to events:**
   - Custom property values
@@ -42,9 +44,9 @@ CRITICAL_CRITICALITY_CONFIG_ID=123459
 To find your security configuration IDs, use the GitHub REST API:
 
 ```bash
-curl -H "Authorization: token YOUR_TOKEN" \
+curl -H "Authorization: bearer YOUR_GITHUB_PAT" \
      -H "Accept: application/vnd.github+json" \
-     https://api.github.com/orgs/YOUR_ORG/code-security-configurations
+     https://api.github.com/orgs/YOUR_ORG/code-security/configurations
 ```
 
 ### 4. Set Up Custom Properties

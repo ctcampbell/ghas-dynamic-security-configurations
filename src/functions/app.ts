@@ -24,13 +24,14 @@ interface CustomPropertyValuesPayload {
     };
     name: string;
   };
-  old_custom_property_values?: CustomPropertyValue[];
-  new_custom_property_values?: CustomPropertyValue[];
+  old_property_values?: CustomPropertyValue[];
+  new_property_values?: CustomPropertyValue[];
 }
 
 export = (app: Probot) => {
   // Handle custom property values webhook event using webhooks.on for custom events
   app.webhooks.on("custom_property_values", async (context) => {
+
     const payload = context.payload as CustomPropertyValuesPayload;
     
     app.log.info("Received custom_property_values event", {
@@ -40,7 +41,7 @@ export = (app: Probot) => {
 
     try {
       // Find the business_criticality property in the new values
-      const businessCriticalityProperty = payload.new_custom_property_values?.find(
+      const businessCriticalityProperty = payload.new_property_values?.find(
         prop => prop.property_name === "business_criticality"
       );
 

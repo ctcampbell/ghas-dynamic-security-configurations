@@ -11,8 +11,10 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
+    "@0dep/pino-applicationinsights": "^1.1.2",
     "@azure/functions": "^4.0.0",
-    "@probot/adapter-azure-functions": "github:probot/adapter-azure-functions"
+    "@probot/adapter-azure-functions": "github:probot/adapter-azure-functions",
+    "pino": "^9.7.0"
   },
   "devDependencies": {
     "@types/node": "^18.x",
